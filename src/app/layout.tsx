@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +21,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div>
+          <Link href="/">
+             <div>
+              Home 
+              <Image src="/favicon.jpg" alt="Vercel Logo" width={72} height={16} />
+
+             </div>
+          </Link>
+
+          <br />
+
+
+        </div>
+        {children}
+        
+        </body>
     </html>
   );
 }
